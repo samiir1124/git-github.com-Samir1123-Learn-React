@@ -1,13 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Button from './Components/ButtonComponent';
 
-function App() {
+const App: React.FC = () => {
+  // Event handlers for App.tsx
+  const handleClick = () => {
+    console.log('Button clicked');
+  };
+
   return (
     <div className="App">
-      <h2>Hellow World</h2>
+      <Button onClick={handleClick} />
     </div>
   );
-}
+};
 
 export default App;
