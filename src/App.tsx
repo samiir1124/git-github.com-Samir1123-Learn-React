@@ -4,14 +4,12 @@ import './App.css';
 import Greeting from './Components/Greeting';
 import Product from './Components/Products';
 import MyComponent from './Components/MyComponent';
+import Counter from './Components/CounterState';
 
 function App() {
   return (
     <div className="App">
-      {/* Calling the Greeting component */}
-      {/* <Greeting name="Alice" />
-      <Product product_name="Laptop" /> */}
-      <MyComponent name="John" age={25} /> // Valid
+      <Counter />
     </div>
   );
 }
