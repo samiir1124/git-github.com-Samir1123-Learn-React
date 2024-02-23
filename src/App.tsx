@@ -1,13 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ListComponent from './Components/ListComponent';
 
-function App() {
+
+const App: React.FC = () => {
+  const items = [
+    { id: 1, text: 'Item 1' },
+    { id: 2, text: 'Item 2' },
+    { id: 3, text: 'Item 3' }
+  ];
+
   return (
-    <div className="App">
-      <h2>Hellow World</h2>
+    <div>
+      <h1>List Example</h1>
+      {/* Render the ListComponent and pass the list of items */}
+      <ListComponent items={items} />
     </div>
   );
-}
+};
 
 export default App;
+
