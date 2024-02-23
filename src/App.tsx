@@ -6,8 +6,8 @@ import ConditionalRendering from './ConditionalRendering/ConditionalRendering';
 function App() {
   return (
     <div className="App">
-      {/* Pass a prop to control the rendering of the button */}
-      <ConditionalRendering showButton={true} />
+      {/* Pass a prop to control the rendering of message */}
+      <ConditionalRendering isAdmin={false} isLoggedIn={true} />
     </div>
   );
 }

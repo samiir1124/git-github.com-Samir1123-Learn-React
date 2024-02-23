@@ -1,17 +1,15 @@
 import React from 'react';
-// Ensure that the correct path to DatePicker component is provided
 
-interface ConditionalRenderingExampleProps {
-  showButton: boolean; // Define the prop type
+interface ExampleProps {
+  isAdmin: boolean;
+  isLoggedIn: boolean;
 }
 
-const ConditionalRenderingExample: React.FC<ConditionalRenderingExampleProps> = ({ showButton }) => {
+const ConditionalRenderingExample: React.FC<ExampleProps> = ({ isAdmin, isLoggedIn }) => {
   return (
     <div>
-      {/* Conditionally render the button based on the prop */}
-      {showButton && <button>Click Me</button>}
-      {/* Conditionally render the input based on the negation of the prop */}
-      {!showButton && <input type="text" placeholder="Enter Date" />}
+      {/* Render different components based on isAdmin and isLoggedIn */}
+      {isAdmin || isLoggedIn ? <p>Welcome, admin user!</p> : <p>Welcome, user!</p>}
     </div>
   );
 };
