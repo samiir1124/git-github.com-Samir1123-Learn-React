@@ -6,7 +6,8 @@ import ConditionalRendering from './ConditionalRendering/ConditionalRendering';
 function App() {
   return (
     <div className="App">
-      <ConditionalRendering />
+      {/* Pass a prop to control the rendering of the button */}
+      <ConditionalRendering showButton={true} />
     </div>
   );
 }
