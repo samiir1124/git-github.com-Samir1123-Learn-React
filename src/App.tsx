@@ -1,11 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ConditionalRendering from './ConditionalRendering/ConditionalRendering';
 
 function App() {
   return (
     <div className="App">
-      <h2>Hellow World</h2>
+      <ConditionalRendering />
     </div>
   );
 }
