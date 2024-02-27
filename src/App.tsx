@@ -1,13 +1,18 @@
+// App.tsx
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ComponentA from './Components/ComponentA';
+import { MyProvider } from './Components/MyContext';
 
-function App() {
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <h2>Hellow World</h2>
-    </div>
+    <MyProvider>
+      <div>
+        <h1>App</h1>
+        <ComponentA />
+      </div>
+    </MyProvider>
   );
-}
+};
 
 export default App;
