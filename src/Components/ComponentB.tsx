@@ -1,22 +1,24 @@
-// ComponentB.tsx
-import React, { useMemo } from 'react';
+import React from 'react';
+import useFetch from '../customHooks/useFetch';
 
-const ComponentB: React.FC = () => {
-  // Define two numbers to sum
-  const num1 = 10;
-  const num2 = 20;
 
-  // Calculate the sum using useMemo
-  const sum = useMemo(() => {
-    console.log('Calculating sum...');
-    return num1 + num2;
-  }, [num1, num2]); // Depend on num1 and num2
+const MyComponentB: React.FC = () => {
+  const { data, loading, error } = useFetch('https://api.example.com/data');
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
 
   return (
     <div>
-      <h2>Sum: {sum}</h2>
+      <h1>Data:</h1>
+      <pre>{JSON.stringify(data, null, 2)}</pre>
     </div>
   );
 };
 
-export default ComponentB;
+export default MyComponentB;
