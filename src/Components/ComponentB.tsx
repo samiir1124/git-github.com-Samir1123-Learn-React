@@ -1,19 +1,20 @@
 // ComponentB.tsx
-import React, { useCallback, useState } from 'react';
+import React, { useMemo } from 'react';
 
 const ComponentB: React.FC = () => {
-  const [count, setCount] = useState(0);
+  // Define two numbers to sum
+  const num1 = 10;
+  const num2 = 20;
 
-  // Define the callback function using useCallback
-  const handleClick = useCallback(() => {
-    setCount(prevCount => prevCount + 1);
-  }, []);
+  // Calculate the sum using useMemo
+  const sum = useMemo(() => {
+    console.log('Calculating sum...');
+    return num1 + num2;
+  }, [num1, num2]); // Depend on num1 and num2
 
   return (
     <div>
-      <h2>Count: {count}</h2>
-      {/* Pass the memoized callback function to the onClick event */}
-      <button onClick={handleClick}>Increment</button>
+      <h2>Sum: {sum}</h2>
     </div>
   );
 };
