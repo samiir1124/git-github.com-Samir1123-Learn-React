@@ -1,13 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ErrorBoundary from './Components/ErrorBoundary';
+import MyComponent from './Components/MyComponent';
 
-function App() {
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <h2>Hellow World</h2>
+    <div>
+      <h1>My App</h1>
+      <ErrorBoundary>
+        <MyComponent />
+      </ErrorBoundary>
     </div>
   );
-}
+};
 
 export default App;
