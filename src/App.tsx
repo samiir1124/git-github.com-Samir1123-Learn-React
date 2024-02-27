@@ -1,13 +1,35 @@
+// App.tsx
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import About from './Components/About';
+import Contact from './Components/Contact';
+import Home from './Components/Home';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <h2>Hellow World</h2>
-    </div>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact</Link>
+            </li>
+          </ul>
+        </nav>
+        <Routes>
+          <Route path="/" Component={Home} />
+          <Route path="/about" Component={About} />
+          <Route path="/contact" Component={Contact} />
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
