@@ -1,13 +1,14 @@
+// app.tsx
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import CrudApiComponent from './Components/CrudApiComponent';
 
-function App() {
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <h2>Hellow World</h2>
+    <div>
+      <CrudApiComponent />
     </div>
   );
-}
+};
 
 export default App;
