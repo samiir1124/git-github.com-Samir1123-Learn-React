@@ -1,11 +1,13 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Counter from './components/Counter';
 
 function App() {
   return (
-    <div className="App">
-      <h2>Hellow World</h2>
+    <div>
+      <h2>Hello World</h2>
+      <Counter/>
     </div>
   );
 }
